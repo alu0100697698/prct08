@@ -5,7 +5,7 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 task :default => :spec
 
-desc "Ejecutar las expectativas de la clase Matriz"
+desc: "Ejecutar las expectativas de la clase Matriz"
 task :spec do
   sh "rspec -I. spec/matriz_spec.rb"
 end
