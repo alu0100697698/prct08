@@ -40,18 +40,25 @@ describe Matriz do
 	end
 	
 	describe "# Operadores aritméticos" do
-		it "Suma de matrices" do
+		it "# Suma de matrices" do
 			@resultado=@m1+@m2
 			@resultado[0][0].should eq(3)
 			@resultado[1][0].should eq(3)
 		end
 		
-		it "Resta de matrices" do
+		it "# Resta de matrices" do
 			@resultado=@m2+@m1
 			@resultado[0][0].should eq(1)
 			@resultado[1][0].should eq(1)
 		end
 		
+	end
+	
+	describe "# Operador unario" do
+		it "# Operador negacion multiplicando por -1" do
+			@negacion=(-@m1)
+			@negacion[0][1].should eq(-1)
+		end
 	end
 	
 	
