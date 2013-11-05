@@ -12,4 +12,15 @@ class matriz
                         i += 1        
                 end
         end
+        
+        def [](valor)
+                raise ArgumentError, 'El índice no es válido' unless valor.is_a? Integer and valor >= 0 and valor < @fil
+                @matriz[i]
+        end
+        
+        def []=(valor,other)
+                raise ArgumentError, 'El índice no es válido' unless valor.is_a? Integer and valor >= 0 and valor < @fil
+                raise ArgumentError, 'El tamaño de la fila no es valido' unless other.size <= @col                
+                @matriz[i] = other                        
+        end
 end
