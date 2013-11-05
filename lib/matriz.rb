@@ -57,4 +57,18 @@ class Matriz
       end
       m
     end
+    
+    def -@
+      i = 0
+      m = Matriz.new(@fil, @col)
+      while(i < @fil)
+        j = 0
+        while(j < @col)
+         m[i][j] = -matriz[i][j]
+         j += 1
+             end
+         i += 1
+      end
+      m
+    end
 end
