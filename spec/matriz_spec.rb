@@ -1,3 +1,5 @@
+require "prct07/lib/fraccion.rb"
+
 require "lib/matriz.rb"
 
 describe Matriz do
@@ -15,18 +17,24 @@ describe Matriz do
 		@m3[0] = [1,1,1]
 		@m3[1] = [2,2,2]
 		@m3[2] = [3,3,3]
+		
+		@f1 = Fraccion.new(1,3)
+		@m4 = Matriz.new(2,2)
+		@m4[0] = [@f1,@f1]
+		@m4[1] = [@f1,@f1]
 	end
 	
 	describe "# Modo de almacenar las matrices" do
 		it "# Almacenar el numero de filas" do
 			@m1.fil
 		end
+	
 		
 		it "# Almacenar el numero de columnas" do
 			@m1.col
 		end
 		
-		it "# Se puede acceder a los elementos de la matriz"
+		it "# Se puede acceder a los elementos de la matriz" do
 			@m1[1] = [1,1]
 			@m1[1][0].should eq(1)
 		end
@@ -46,6 +54,11 @@ describe Matriz do
 			@resultado[1][0].should eq(3)
 		end
 		
+		it "# Suma de matrices con operandos racionales" do
+			@result=@m1+@m4
+			@result[0][0].should eq(1.3)
+		end
+		
 		it "# Resta de matrices" do
 			@resultado=@m2+@m1
 			@resultado[0][0].should eq(1)
@@ -60,6 +73,5 @@ describe Matriz do
 			@negacion[0][1].should eq(-1)
 		end
 	end
-	
-	
+
 end
